@@ -1,148 +1,242 @@
-<html>
-  <head>
-    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
-    <link
-      rel="stylesheet"
-      as="style"
-      onload="this.rel='stylesheet'"
-      href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Space+Grotesk%3Awght%40400%3B500%3B700"
-    />
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galileo Design</title>
 
-    <title>Galileo Design</title>
-    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?display=swap&family=Noto+Sans:wght@400;500;700;900&family=Space+Grotesk:wght@400;500;700">
+  <link rel="icon" href="data:image/x-icon;base64,">
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-  </head>
-  <body>
-    <div class="relative flex size-full min-h-screen flex-col bg-[#111b22] dark group/design-root overflow-x-hidden" style='font-family: "Space Grotesk", "Noto Sans", sans-serif;'>
-      <div class="flex items-center bg-[#111b22] p-4 pb-2 justify-between">
-        <h2 class="text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center pl-12">Gen Agnar Al-Biruni</h2>
-        <div class="flex w-12 items-center justify-end">
-          <button
-            class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 bg-transparent text-white gap-2 text-base font-bold leading-normal tracking-[0.015em] min-w-0 p-0"
-          >
-            <div class="text-white" data-icon="CaretDown" data-size="24px" data-weight="regular">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
-                <path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"></path>
-              </svg>
-            </div>
-          </button>
+  <style>
+    /* Global styles */
+    body {
+      font-family: 'Noto Sans', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #111b22;
+      color: white;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h2 {
+      font-size: 1.25rem;
+      font-weight: bold;
+    }
+
+    .btn-toggle {
+      background: none;
+      border: none;
+      color: white;
+      cursor: pointer;
+    }
+
+    /* Hero Section */
+    .hero-section {
+      background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4)), url('https://cdn.usegalileo.ai/sdxl10/eadae56c-1c2b-468c-a39f-c067e437cdcd.png');
+      background-size: cover;
+      background-position: center;
+      text-align: center;
+      padding: 100px 20px;
+    }
+
+    .hero-section h1 {
+      font-size: 2.5rem;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .hero-section p {
+      font-size: 1rem;
+      color: #92b3c9;
+    }
+
+    /* Project Section */
+    .project-section {
+      margin-top: 50px;
+    }
+
+    .project-card {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+      padding: 20px;
+      background-color: #1f2b36;
+      border-radius: 10px;
+      gap: 20px;
+    }
+
+    .project-card img {
+      width: 64px;
+      height: 64px;
+      border-radius: 8px;
+    }
+
+    .project-card .project-info {
+      flex: 1;
+    }
+
+    .project-card .project-info p {
+      margin: 5px 0;
+    }
+
+    /* Contact Section */
+    .contact-section {
+      margin-top: 50px;
+      text-align: center;
+    }
+
+    .contact-section a {
+      display: inline-block;
+      width: 50px;
+      height: 50px;
+      margin: 10px;
+      background-color: #233948;
+      border-radius: 50%;
+      color: #92b3c9;
+      text-align: center;
+      line-height: 50px;
+    }
+
+    .contact-section a:hover {
+      background-color: #92b3c9;
+      color: #233948;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      margin-top: 50px;
+      color: #92b3c9;
+    }
+
+    /* Responsiveness */
+    @media (max-width: 768px) {
+      .hero-section h1 {
+        font-size: 2rem;
+      }
+
+      .hero-section p {
+        font-size: 0.9rem;
+      }
+
+      .project-card {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .project-card img {
+        margin-bottom: 10px;
+        width: 50px;
+        height: 50px;
+      }
+
+      .project-card .project-info {
+        text-align: left;
+      }
+
+      .contact-section a {
+        width: 40px;
+        height: 40px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero-section h1 {
+        font-size: 1.5rem;
+      }
+
+      .hero-section p {
+        font-size: 0.8rem;
+      }
+
+      .project-card {
+        padding: 15px;
+      }
+
+      .project-card img {
+        width: 40px;
+        height: 40px;
+      }
+
+      .contact-section a {
+        width: 35px;
+        height: 35px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h2>Gen Agnar Al-Biruni</h2>
+      <button class="btn-toggle">☰</button>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <h1>Digital Designer & Indie Game Developer</h1>
+      <p>I am Gen Agnar Al-Biruni, a digital designer & indie game developer. I am 16 years old, aiming to be successful at a young age.</p>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="project-section">
+      <h2 class="text-2xl font-bold mt-5">Projects</h2>
+
+      <div class="project-card">
+        <img src="https://cdn.usegalileo.ai/stability/06472128-d51a-4c77-b707-299a800faa61.png" alt="Indie Game Developer">
+        <div class="project-info">
+          <p class="text-base font-medium">Indie Game Developer</p>
+          <p class="text-sm text-[#92b3c9]">Design, develop, and test computer games for indie developers.</p>
+          <p class="text-sm text-[#92b3c9]">Unity, Unreal Engine</p>
         </div>
       </div>
-      <div class="@container">
-        <div class="@[480px]:p-4">
-          <div
-            class="flex min-h-[480px] flex-col gap-6 bg-cover bg-center bg-no-repeat @[480px]:gap-8 @[480px]:rounded-xl items-center justify-center p-4"
-            style='background-image: linear-gradient(rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.4) 100%), url("https://cdn.usegalileo.ai/sdxl10/eadae56c-1c2b-468c-a39f-c067e437cdcd.png");'
-          >
-            <div class="flex flex-col gap-2 text-center">
-              <h1
-                class="text-white text-4xl font-black leading-tight tracking-[-0.033em] @[480px]:text-5xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em]"
-              >
-                Digital Designer &amp; Indie Game Developer
-              </h1>
-              <h2 class="text-white text-sm font-normal leading-normal @[480px]:text-base @[480px]:font-normal @[480px]:leading-normal">
-                I am Gen Agnar Al-Biruni, a digital designer &amp; indie game developer. I am 16 years old, I want to be successful at a young age
-              </h2>
-            </div>
-          </div>
+
+      <div class="project-card">
+        <img src="https://cdn.usegalileo.ai/stability/06472128-d51a-4c77-b707-299a800faa61.png" alt="2D/3D Designer">
+        <div class="project-info">
+          <p class="text-base font-medium">2D/3D Designer</p>
+          <p class="text-sm text-[#92b3c9]">Create 2D/3D designs using Blender, Autodesk Maya, Photoshop, Illustrator, CorelDRAW.</p>
+          <p class="text-sm text-[#92b3c9]">Blender, Maya, Photoshop, Illustrator</p>
         </div>
       </div>
-      <h2 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Projects</h2>
-      <div class="flex gap-4 bg-[#111b22] px-4 py-3 justify-between">
-        <div class="flex items-start gap-4">
-          <div
-            class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg size-[70px]"
-            style='background-image: url("https://cdn.usegalileo.ai/stability/06472128-d51a-4c77-b707-299a800faa61.png");'
-          ></div>
-          <div class="flex flex-1 flex-col justify-center">
-            <p class="text-white text-base font-medium leading-normal">Indie Game Developer</p>
-            <p class="text-[#92b3c9] text-sm font-normal leading-normal">Design, develop, and test computer games for independent developers.</p>
-            <p class="text-[#92b3c9] text-sm font-normal leading-normal">Unity, Unreal Engine</p>
-          </div>
-        </div>
-        <div class="shrink-0">
-          <div class="text-white flex size-7 items-center justify-center" data-icon="ArrowRight" data-size="24px" data-weight="regular">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
-              <path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"></path>
-            </svg>
-          </div>
+
+      <div class="project-card">
+        <img src="https://cdn.usegalileo.ai/stability/06472128-d51a-4c77-b707-299a800faa61.png" alt="Programming">
+        <div class="project-info">
+          <p class="text-base font-medium">Programming</p>
+          <p class="text-sm text-[#92b3c9]">Develop websites, applications, and software solutions.</p>
+          <p class="text-sm text-[#92b3c9]">HTML, CSS, C++, Python, JavaScript</p>
         </div>
       </div>
-      <div class="flex gap-4 bg-[#111b22] px-4 py-3 justify-between">
-        <div class="flex items-start gap-4">
-          <div class="text-white flex items-center justify-center rounded-lg bg-[#233948] shrink-0 size-12" data-icon="Image" data-size="24px" data-weight="regular">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
-              <path
-                d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40Zm0,16V158.75l-26.07-26.06a16,16,0,0,0-22.63,0l-20,20-44-44a16,16,0,0,0-22.62,0L40,149.37V56ZM40,172l52-52,80,80H40Zm176,28H194.63l-36-36,20-20L216,181.38V200ZM144,100a12,12,0,1,1,12,12A12,12,0,0,1,144,100Z"
-              ></path>
-            </svg>
-          </div>
-          <div class="flex flex-1 flex-col justify-center">
-            <p class="text-white text-base font-medium leading-normal">2D/3D Designer</p>
-            <p class="text-[#92b3c9] text-sm font-normal leading-normal">Create 2D/3D design using Blender, Autodesk Maya, Photoshop, Illustrator, CorelDRAW.</p>
-            <p class="text-[#92b3c9] text-sm font-normal leading-normal">Blender, Autodesk Maya, Photoshop, Illustrator, CorelDRAW</p>
-          </div>
-        </div>
-        <div class="shrink-0">
-          <div class="text-white flex size-7 items-center justify-center" data-icon="ArrowRight" data-size="24px" data-weight="regular">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
-              <path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"></path>
-            </svg>
-          </div>
-        </div>
-      </div>
-      <div class="flex gap-4 bg-[#111b22] px-4 py-3 justify-between">
-        <div class="flex items-start gap-4">
-          <div class="text-white flex items-center justify-center rounded-lg bg-[#233948] shrink-0 size-12" data-icon="Code" data-size="24px" data-weight="regular">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
-              <path
-                d="M69.12,94.15,28.5,128l40.62,33.85a8,8,0,1,1-10.24,12.29l-48-40a8,8,0,0,1,0-12.29l48-40a8,8,0,0,1,10.24,12.3Zm176,27.7-48-40a8,8,0,1,0-10.24,12.3L227.5,128l-40.62,33.85a8,8,0,1,0,10.24,12.29l48-40a8,8,0,0,0,0-12.29ZM162.73,32.48a8,8,0,0,0-10.25,4.79l-64,176a8,8,0,0,0,4.79,10.26A8.14,8.14,0,0,0,96,224a8,8,0,0,0,7.52-5.27l64-176A8,8,0,0,0,162.73,32.48Z"
-              ></path>
-            </svg>
-          </div>
-          <div class="flex flex-1 flex-col justify-center">
-            <p class="text-white text-base font-medium leading-normal">Programming</p>
-            <p class="text-[#92b3c9] text-sm font-normal leading-normal">Develop websites, web applications, and software solutions.</p>
-            <p class="text-[#92b3c9] text-sm font-normal leading-normal">HTML, CSS, C++, Python, JavaScript</p>
-          </div>
-        </div>
-        <div class="shrink-0">
-          <div class="text-white flex size-7 items-center justify-center" data-icon="ArrowRight" data-size="24px" data-weight="regular">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
-              <path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"></path>
-            </svg>
-          </div>
-        </div>
-      </div>
-      <h2 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Contact Me</h2>
-      <div class="flex items-center px-4 py-3 justify-center">
-  <!-- WhatsApp Logo -->
-  <div class="overflow-visible w-[34px]">
-    <div
-      class="bg-center bg-no-repeat aspect-square bg-cover border-[#111b22] bg-[#233948] text-[#92b3c9] rounded-full flex items-center justify-center size-11 border-4"
-      style='background-image: url("whatsapp.png");'
-    ></div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+      <h2 class="text-2xl font-bold mt-5">Contact Me</h2>
+      <a href="https://wa.me/1234567890" class="w-9 h-9 flex items-center justify-center">WA</a>
+      <a href="mailto:example@gmail.com" class="w-9 h-9 flex items-center justify-center">Email</a>
+      <a href="https://instagram.com/username" class="w-9 h-9 flex items-center justify-center">IG</a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>© 2023 Gen Agnar Al-Biruni</p>
+    </footer>
   </div>
-  
-  <!-- Gmail Logo -->
-  <div class="overflow-visible w-[34px]">
-    <div
-      class="bg-center bg-no-repeat aspect-square bg-cover border-[#111b22] bg-[#233948] text-[#92b3c9] rounded-full flex items-center justify-center size-11 border-4"
-      style='background-image: url("gmail.png");'
-    ></div>
-  </div>
-  
-  <!-- Instagram Logo -->
-  <div class="overflow-visible w-11">
-    <div
-      class="bg-center bg-no-repeat aspect-square bg-cover border-[#111b22] bg-[#233948] text-[#92b3c9] rounded-full flex items-center justify-center size-11 border-4"
-      style='background-image: url("instagram.png");'
-    ></div>
-  </div>
-</div>
-      <footer class="flex flex-col gap-6 px-5 py-10 text-center @container"><p class="text-[#92b3c9] text-base font-normal leading-normal">© 2023 Gen Agnar Al-Biruni</p></footer>
-      <div class="h-5 bg-[#111b22]"></div>
-    </div>
-  </body>
+</body>
 </html>
