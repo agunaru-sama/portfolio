@@ -1,46 +1,57 @@
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const sliders = document.querySelectorAll('.project-slider');
-    const dots = document.querySelectorAll('.slider-dot');
+document.addEventListener("DOMContentLoaded", function () {
+  // Untuk setiap slider project (Indie Game Developer, 2D/3D Designer, Programming)
+  const sliders = document.querySelectorAll('.project-slider');
+  const dots = document.querySelectorAll('.slider-dots .slider-dot');
 
-    sliders.forEach((slider, index) => {
-      let currentSlide = 0;
-      const images = slider.querySelectorAll('img');
-      const totalSlides = images.length;
+  sliders.forEach((slider, index) => {
+    let currentSlide = 0;
+    const totalSlides = slider.children.length;
+    let autoSlideInterval;
 
-      function showSlide(slideIndex) {
-        images.forEach((img, i) => {
-          img.classList.remove('active', 'prev', 'next'); // Reset semua class
+    // Fungsi untuk menampilkan slide tertentu
+    function showSlide(index) {
+      slider.style.transform = `translateX(-${index * 100}%)`;
+      updateDots(index); // Update dot yang aktif
+    }
 
-          if (i === slideIndex) {
-            img.classList.add('active'); // Gambar aktif
-          } else if (i === (slideIndex - 1 + totalSlides) % totalSlides) {
-            img.classList.add('prev'); // Gambar sebelumnya di luar layar kiri
-          } else {
-            img.classList.add('next'); // Gambar berikutnya di luar layar kanan
-          }
-        });
-
-        dots.forEach((dot, i) => {
-          dot.classList.toggle('active', i === slideIndex);
-        });
-      }
-
+    // Fungsi untuk memperbarui tampilan dot slider
+    function updateDots(index) {
+      dots[index].classList.add('active');
       dots.forEach((dot, i) => {
-        dot.addEventListener('click', () => {
-          currentSlide = i;
-          showSlide(currentSlide);
-        });
+        if (i !== index) {
+          dot.classList.remove('active');
+        }
       });
+    }
 
-      setTimeout(() => {
-        showSlide(currentSlide); // Menampilkan gambar pertama setelah 3 detik
-      }, 3000); // Delay sebelum gambar pertama muncul
-     
-      setInterval(() => {
-        currentSlide = (currentSlide + 1) % totalSlides;
+    // Fungsi untuk bergeser ke slide berikutnya
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % totalSlides;
+      showSlide(currentSlide);
+    }
+
+    // Fungsi untuk bergeser ke slide sebelumnya
+    function prevSlide() {
+      currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+      showSlide(currentSlide);
+    }
+
+    // Mengupdate dot dan menggeser gambar sesuai interval
+    autoSlideInterval = setInterval(nextSlide, 3000); // Set interval untuk berganti gambar setiap 3 detik
+
+    // Menunggu 3 detik sebelum mulai slide
+    setTimeout(() => {
+      autoSlideInterval = setInterval(nextSlide, 3000); // Mulai pergeseran setelah 3 detik
+    }, 3000);
+
+    // Mengubah slide saat klik dot
+    dots.forEach((dot, dotIndex) => {
+      dot.addEventListener('click', () => {
+        clearInterval(autoSlideInterval); // Hentikan interval saat dot diklik
+        currentSlide = dotIndex;
         showSlide(currentSlide);
-      }, 3000); // Ganti gambar setiap 3 detik
+        autoSlideInterval = setInterval(nextSlide, 3000); // Mulai lagi interval setelah dot diklik
+      });
     });
   });
-</script>
+});
