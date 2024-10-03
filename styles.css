@@ -25,6 +25,13 @@ header h2 {
   font-weight: bold;
 }
 
+.btn-toggle {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
 /* Hero Section */
 .hero-section {
   background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4)), url('gambarmuka.png');
@@ -50,10 +57,8 @@ header h2 {
   margin-top: 50px;
 }
 
-/* Project Card Styling */
 .project-card {
   display: flex;
-  flex-direction: column;
   align-items: center;
   margin-bottom: 20px;
   background-color: #1f2b36;
@@ -63,31 +68,68 @@ header h2 {
   max-height: 500px;
 }
 
-.project-img-container {
+.project-card img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+/* Slider Container */
+.project-slider {
   position: relative;
   width: 100%;
-  height: 300px; /* Fixed height for image container */
+  height: 100%;
   overflow: hidden;
 }
 
-.project-img {
+.project-slider img {
   position: absolute;
+  top: 0;
+  left: 100%;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  animation: slide 12s infinite;
+  height: auto;
+  transition: transform 1s ease-in-out;
+  opacity: 0;
 }
 
-@keyframes slide {
-  0% { transform: translateX(0); }
-  25% { transform: translateX(-100%); }
-  50% { transform: translateX(-200%); }
-  75% { transform: translateX(-300%); }
-  100% { transform: translateX(0); }
+.project-slider img.active {
+  transform: translateX(0); /* Gambar dalam posisi aktif */
+  opacity: 1;
 }
 
+.project-slider img.prev {
+  transform: translateX(-100%); /* Gambar sebelumnya di luar layar kiri */
+}
+
+.project-slider img.next {
+  transform: translateX(100%); /* Gambar berikutnya di luar layar kanan */
+}
+
+/* Slider navigation dots */
+.slider-dots {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.slider-dot {
+  width: 10px;
+  height: 10px;
+  margin: 0 5px;
+  background-color: #92b3c9;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.slider-dot.active {
+  background-color: #233948;
+}
+
+/* Project Info */
 .project-info {
   padding: 20px;
+  flex: 1;
   color: white;
 }
 
@@ -95,22 +137,27 @@ header h2 {
   margin: 5px 0;
 }
 
-.slider-navigation {
-  display: flex;
-  margin-top: 10px;
+/* Contact Section */
+.contact-section {
+  margin-top: 50px;
+  text-align: center;
 }
 
-.slider-dot {
-  height: 10px;
-  width: 10px;
+.contact-section a {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  margin: 10px;
+  background-color: #233948;
   border-radius: 50%;
-  background-color: #92b3c9;
-  margin: 0 5px;
-  transition: background-color 0.3s ease;
+  color: #92b3c9;
+  text-align: center;
+  line-height: 50px;
 }
 
-.slider-dot.active {
-  background-color: white;
+.contact-section a:hover {
+  background-color: #92b3c9;
+  color: #233948;
 }
 
 /* Footer */
@@ -134,72 +181,43 @@ footer {
     flex-direction: column;
     align-items: flex-start;
   }
-}
 
-/* Pastikan project card dan gambar slider menyesuaikan ukuran layar */
-.project-card {
-  display: flex;
-  align-items: center;
-  margin-bottom: 20px;
-  background-color: #1f2b36;
-  border-radius: 10px;
-  overflow: hidden;
-  width: 100%;
-  max-width: 100%;  /* Pastikan kontainer mengikuti ukuran layar */
-  height: auto;
-}
+  .project-card img {
+    margin-bottom: 10px;
+    width: 100%;
+    height: auto;
+  }
 
-.project-card img {
-  width: 100%;  /* Pastikan gambar memenuhi lebar kontainer */
-  height: auto;
-  object-fit: cover;  /* Pastikan gambar tetap terjaga proporsinya */
-  transition: transform 0.5s ease-in-out; /* Untuk efek smooth saat slide */
-}
+  .project-card .project-info {
+    text-align: left;
+  }
 
-.project-slider {
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-
-.project-slider img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-.project-nav {
-  position: absolute;
-  bottom: 10px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  justify-content: center;
-}
-
-.slider-dot {
-  width: 10px;
-  height: 10px;
-  margin: 0 5px;
-  background-color: rgba(255, 255, 255, 0.5);
-  border-radius: 50%;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.slider-dot.active {
-  background-color: white;
-}
-
-@media (max-width: 768px) {
-  .project-card {
-    flex-direction: column;
+  .contact-section a {
+    width: 40px;
+    height: 40px;
   }
 }
 
 @media (max-width: 480px) {
-  .slider-dot {
-    width: 8px;
-    height: 8px;
+  .hero-section h1 {
+    font-size: 1.5rem;
+  }
+
+  .hero-section p {
+    font-size: 0.8rem;
+  }
+
+  .project-card {
+    padding: 15px;
+  }
+
+  .project-card img {
+    width: 100%;
+    height: auto;
+  }
+
+  .contact-section a {
+    width: 35px;
+    height: 35px;
   }
 }
