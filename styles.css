@@ -1,62 +1,4 @@
-/* Global styles */
-body {
-  font-family: 'Noto Sans', sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #111b22;
-  color: white;
-}
-
-.container {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
-}
-
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-header h2 {
-  font-size: 1.25rem;
-  font-weight: bold;
-}
-
-.btn-toggle {
-  background: none;
-  border: none;
-  color: white;
-  cursor: pointer;
-}
-
-/* Hero Section */
-.hero-section {
-  background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4)), url('gambarmuka.png');
-  background-size: cover;
-  background-position: center;
-  text-align: center;
-  padding: 100px 20px;
-}
-
-.hero-section h1 {
-  font-size: 2.5rem;
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-
-.hero-section p {
-  font-size: 1rem;
-  color: #92b3c9;
-}
-
-/* Project Section */
-.project-section {
-  margin-top: 50px;
-}
-
+/* Pastikan project card dan gambar slider menyesuaikan ukuran layar */
 .project-card {
   display: flex;
   align-items: center;
@@ -65,112 +7,61 @@ header h2 {
   border-radius: 10px;
   overflow: hidden;
   width: 100%;
+  max-width: 100%;  /* Pastikan kontainer mengikuti ukuran layar */
   height: auto;
 }
 
-.project-info {
-  padding: 20px;
-  flex: 1;
-  color: white;
+.project-card img {
+  width: 100%;  /* Pastikan gambar memenuhi lebar kontainer */
+  height: auto;
+  object-fit: cover;  /* Pastikan gambar tetap terjaga proporsinya */
+  transition: transform 0.5s ease-in-out; /* Untuk efek smooth saat slide */
 }
 
-.project-info p {
-  margin: 5px 0;
-}
-
-/* Slick Slider styles */
 .project-slider {
-  width: 100%; /* Ensure the slider takes up full width */
-  overflow: hidden; /* Prevent any overflow outside the container */
+  position: relative;
+  width: 100%;
+  height: 100%;
 }
 
 .project-slider img {
-  width: 100%; /* Image takes up the full width of the project-card */
-  height: auto; /* Maintain aspect ratio */
-  display: block; /* Prevent extra whitespace below the image */
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
-/* Contact Section */
-.contact-section {
-  margin-top: 50px;
-  text-align: center;
+.project-nav {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
 }
 
-.contact-section a {
-  display: inline-block;
-  width: 50px;
-  height: 50px;
-  margin: 10px;
-  background-color: #233948;
+.slider-dot {
+  width: 10px;
+  height: 10px;
+  margin: 0 5px;
+  background-color: rgba(255, 255, 255, 0.5);
   border-radius: 50%;
-  color: #92b3c9;
-  text-align: center;
-  line-height: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
 
-.contact-section a:hover {
-  background-color: #92b3c9;
-  color: #233948;
+.slider-dot.active {
+  background-color: white;
 }
 
-/* Footer */
-footer {
-  text-align: center;
-  margin-top: 50px;
-  color: #92b3c9;
-}
-
-/* Responsiveness */
 @media (max-width: 768px) {
-  .hero-section h1 {
-    font-size: 2rem;
-  }
-
-  .hero-section p {
-    font-size: 0.9rem;
-  }
-
   .project-card {
     flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .project-card img {
-    margin-bottom: 10px;
-    width: 100%;
-    height: auto;
-  }
-
-  .project-card .project-info {
-    text-align: left;
-  }
-
-  .contact-section a {
-    width: 40px;
-    height: 40px;
   }
 }
 
 @media (max-width: 480px) {
-  .hero-section h1 {
-    font-size: 1.5rem;
-  }
-
-  .hero-section p {
-    font-size: 0.8rem;
-  }
-
-  .project-card {
-    padding: 15px;
-  }
-
-  .project-card img {
-    width: 100%;
-    height: auto;
-  }
-
-  .contact-section a {
-    width: 35px;
-    height: 35px;
+  .slider-dot {
+    width: 8px;
+    height: 8px;
   }
 }
