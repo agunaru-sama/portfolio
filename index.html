@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,186 +8,11 @@
 
   <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?display=swap&family=Noto+Sans:wght@400;500;700;900&family=Space+Grotesk:wght@400;500;700">
-  <link rel="icon" href="data:image/x-icon;base64,">
+  <link rel="stylesheet" href="styles.css">
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 
-  <style>
-    /* Global styles */
-    body {
-      font-family: 'Noto Sans', sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #111b22;
-      color: white;
-    }
-
-    .container {
-      width: 100%;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 20px;
-    }
-
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    header h2 {
-      font-size: 1.25rem;
-      font-weight: bold;
-    }
-
-    .btn-toggle {
-      background: none;
-      border: none;
-      color: white;
-      cursor: pointer;
-    }
-
-    /* Hero Section */
-    .hero-section {
-      background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4)), url('gambarmuka.png');
-      background-size: cover;
-      background-position: center;
-      text-align: center;
-      padding: 100px 20px;
-    }
-
-    .hero-section h1 {
-      font-size: 2.5rem;
-      font-weight: bold;
-      margin-bottom: 10px;
-    }
-
-    .hero-section p {
-      font-size: 1rem;
-      color: #92b3c9;
-    }
-
-    /* Project Section */
-    .project-section {
-      margin-top: 50px;
-    }
-
-    /* Update Project Card styling */
-    .project-card {
-      display: flex;
-      align-items: center;
-      margin-bottom: 20px;
-      background-color: #1f2b36;
-      border-radius: 10px;
-      overflow: hidden; /* Ensure image stays inside the card */
-      width: 100%; /* Make sure the card fills the container */
-      height: auto; /* Allow height to be dynamic */
-      max-height: 500px; /* Set a max height to avoid being too tall */
-    }
-
-    /* Update the image styling for landscape and full width */
-    .project-card img {
-      width: 100%; /* Full width image */
-      height: auto; /* Maintain aspect ratio */
-      aspect-ratio: 16 / 9; /* Ensure a 16:9 aspect ratio for the image */
-      object-fit: cover; /* Make sure image covers the area without distortion */
-    }
-
-    .project-card .project-info {
-      padding: 20px;
-      flex: 1;
-      color: white;
-    }
-
-    .project-card .project-info p {
-      margin: 5px 0;
-    }
-
-    /* Contact Section */
-    .contact-section {
-      margin-top: 50px;
-      text-align: center;
-    }
-
-    .contact-section a {
-      display: inline-block;
-      width: 50px;
-      height: 50px;
-      margin: 10px;
-      background-color: #233948;
-      border-radius: 50%;
-      color: #92b3c9;
-      text-align: center;
-      line-height: 50px;
-    }
-
-    .contact-section a:hover {
-      background-color: #92b3c9;
-      color: #233948;
-    }
-
-    /* Footer */
-    footer {
-      text-align: center;
-      margin-top: 50px;
-      color: #92b3c9;
-    }
-
-    /* Responsiveness */
-    @media (max-width: 768px) {
-      .hero-section h1 {
-        font-size: 2rem;
-      }
-
-      .hero-section p {
-        font-size: 0.9rem;
-      }
-
-      .project-card {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .project-card img {
-        margin-bottom: 10px;
-        width: 100%;
-        height: auto;
-      }
-
-      .project-card .project-info {
-        text-align: left;
-      }
-
-      .contact-section a {
-        width: 40px;
-        height: 40px;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .hero-section h1 {
-        font-size: 1.5rem;
-      }
-
-      .hero-section p {
-        font-size: 0.8rem;
-      }
-
-      .project-card {
-        padding: 15px;
-      }
-
-      .project-card img {
-        width: 100%;
-        height: auto;
-      }
-
-      .contact-section a {
-        width: 35px;
-        height: 35px;
-      }
-    }
-  </style>
 </head>
+
 <body>
   <div class="container">
     <header>
@@ -197,15 +23,21 @@
     <!-- Hero Section -->
     <section class="hero-section">
       <h1>Digital Designer & Indie Game Developer</h1>
-      <p>I am Gen Agnar Al-Biruni, a digital designer & indie game developer. I am 16 years old, aiming to be successful at a young age.</p>
+      <p>Gen Agnar Al-Biruni, a 16-year-old digital designer & indie game developer aiming for success at a young age.</p>
     </section>
 
     <!-- Projects Section -->
     <section class="project-section">
       <h2 class="text-2xl font-bold mt-5">Projects</h2>
 
+      <!-- Project 1: Indie Game Developer -->
       <div class="project-card">
-        <img src="projectcard1.png" alt="Indie Game Developer">
+        <div class="project-img-container">
+          <img src="projectcard1-1.png" alt="Indie Game Developer" class="project-img">
+          <img src="projectcard1-2.png" alt="Indie Game Developer" class="project-img">
+          <img src="projectcard1-3.png" alt="Indie Game Developer" class="project-img">
+          <img src="projectcard1-4.png" alt="Indie Game Developer" class="project-img">
+        </div>
         <div class="project-info">
           <p class="text-base font-medium">Indie Game Developer</p>
           <p class="text-sm text-[#92b3c9]">Design, develop, and test computer games for indie developers.</p>
@@ -213,17 +45,29 @@
         </div>
       </div>
 
+      <!-- Project 2: 2D/3D Designer -->
       <div class="project-card">
-        <img src="projectcard2.png" alt="2D/3D Designer">
+        <div class="project-img-container">
+          <img src="projectcard2-1.png" alt="2D/3D Designer" class="project-img">
+          <img src="projectcard2-2.png" alt="2D/3D Designer" class="project-img">
+          <img src="projectcard2-3.png" alt="2D/3D Designer" class="project-img">
+          <img src="projectcard2-4.png" alt="2D/3D Designer" class="project-img">
+        </div>
         <div class="project-info">
           <p class="text-base font-medium">2D/3D Designer</p>
-          <p class="text-sm text-[#92b3c9]">Create 2D/3D designs using Blender, Autodesk Maya, Photoshop, Illustrator, CorelDRAW.</p>
+          <p class="text-sm text-[#92b3c9]">2D design and 3D modelling.</p>
           <p class="text-sm text-[#92b3c9]">Blender, Maya, Photoshop, Illustrator</p>
         </div>
       </div>
 
+      <!-- Project 3: Programming -->
       <div class="project-card">
-        <img src="projectcard3.png" alt="Programming">
+        <div class="project-img-container">
+          <img src="projectcard3-1.png" alt="Programming" class="project-img">
+          <img src="projectcard3-2.png" alt="Programming" class="project-img">
+          <img src="projectcard3-3.png" alt="Programming" class="project-img">
+          <img src="projectcard3-4.png" alt="Programming" class="project-img">
+        </div>
         <div class="project-info">
           <p class="text-base font-medium">Programming</p>
           <p class="text-sm text-[#92b3c9]">Develop websites, applications, and software solutions.</p>
@@ -235,16 +79,12 @@
     <!-- Contact Section -->
     <section class="contact-section">
       <h2 class="text-2xl font-bold mt-5">Contact Me</h2>
-
-      <!-- Updated Contact Icons with local images -->
       <a href="https://wa.me/+62 819-9994-4230" class="w-9 h-9 flex items-center justify-center">
         <img src="whatsapp.png" alt="WhatsApp" class="w-full h-full object-cover rounded-full">
       </a>
-      
       <a href="mailto:gnar.animation@gmail.com" class="w-9 h-9 flex items-center justify-center">
         <img src="gmail.png" alt="Gmail" class="w-full h-full object-cover rounded-full">
       </a>
-
       <a href="https://instagram.com/gen.albi" class="w-9 h-9 flex items-center justify-center">
         <img src="instagram.png" alt="Instagram" class="w-full h-full object-cover rounded-full">
       </a>
@@ -256,4 +96,5 @@
     </footer>
   </div>
 </body>
+
 </html>
