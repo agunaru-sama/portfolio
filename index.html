@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<!-- CSS Slick Slider -->
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" />
+
+<!-- JavaScript Slick Slider -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Personal Portfolio</title>
@@ -201,36 +209,55 @@
     </section>
 
     <!-- Projects Section -->
-    <section class="project-section">
-      <h2 class="text-2xl font-bold mt-5">Projects</h2>
+<section class="project-section">
+  <h2 class="text-2xl font-bold mt-5">Projects</h2>
 
-      <div class="project-card">
-        <img src="projectcard1.png" alt="Indie Game Developer">
-        <div class="project-info">
-          <p class="text-base font-medium">Indie Game Developer</p>
-          <p class="text-sm text-[#92b3c9]">Design, develop, and test computer games for indie developers.</p>
-          <p class="text-sm text-[#92b3c9]">Unity, Unreal Engine</p>
-        </div>
-      </div>
+  <!-- Project 1 -->
+  <div class="project-card">
+    <!-- Slick Slider for Project 1 -->
+    <div class="project-slider">
+      <div><img src="projectcard1-1.png" alt="Project 1 - Image 1"></div>
+      <div><img src="projectcard1-2.png" alt="Project 1 - Image 2"></div>
+      <div><img src="projectcard1-3.png" alt="Project 1 - Image 3"></div>
+      <div><img src="projectcard1-4.png" alt="Project 1 - Image 4"></div>
+    </div>
+    <div class="project-info">
+      <p class="text-base font-medium">Indie Game Developer</p>
+      <p class="text-sm text-[#92b3c9]">Design, develop, and test computer games for indie developers.</p>
+      <p class="text-sm text-[#92b3c9]">Unity, Unreal Engine</p>
+    </div>
+  </div>
 
-      <div class="project-card">
-        <img src="projectcard2.png" alt="2D/3D Designer">
-        <div class="project-info">
-          <p class="text-base font-medium">2D/3D Designer</p>
-          <p class="text-sm text-[#92b3c9]">2D design and 3D modelling.</p>
-          <p class="text-sm text-[#92b3c9]">Blender, Maya, Photoshop, Illustrator</p>
-        </div>
-      </div>
+  <!-- Project 2 -->
+  <div class="project-card">
+    <div class="project-slider">
+      <div><img src="projectcard2-1.png" alt="Project 2 - Image 1"></div>
+      <div><img src="projectcard2-2.png" alt="Project 2 - Image 2"></div>
+      <div><img src="projectcard2-3.png" alt="Project 2 - Image 3"></div>
+      <div><img src="projectcard2-4.png" alt="Project 2 - Image 4"></div>
+    </div>
+    <div class="project-info">
+      <p class="text-base font-medium">2D/3D Designer</p>
+      <p class="text-sm text-[#92b3c9]">2D design and 3D modeling.</p>
+      <p class="text-sm text-[#92b3c9]">Blender, Maya, Photoshop, Illustrator</p>
+    </div>
+  </div>
 
-      <div class="project-card">
-        <img src="projectcard3.png" alt="Programming">
-        <div class="project-info">
-          <p class="text-base font-medium">Programming</p>
-          <p class="text-sm text-[#92b3c9]">Develop websites, applications, and software solutions.</p>
-          <p class="text-sm text-[#92b3c9]">HTML, CSS, C++, Python, JavaScript</p>
-        </div>
-      </div>
-    </section>
+  <!-- Project 3 -->
+  <div class="project-card">
+    <div class="project-slider">
+      <div><img src="projectcard3-1.png" alt="Project 3 - Image 1"></div>
+      <div><img src="projectcard3-2.png" alt="Project 3 - Image 2"></div>
+      <div><img src="projectcard3-3.png" alt="Project 3 - Image 3"></div>
+      <div><img src="projectcard3-4.png" alt="Project 3 - Image 4"></div>
+    </div>
+    <div class="project-info">
+      <p class="text-base font-medium">Programming</p>
+      <p class="text-sm text-[#92b3c9]">Develop websites, applications, and software solutions.</p>
+      <p class="text-sm text-[#92b3c9]">HTML, CSS, C++, Python, JavaScript</p>
+    </div>
+  </div>
+</section>
 
     <!-- Contact Section -->
     <section class="contact-section">
@@ -255,5 +282,18 @@
       <p>© 2023 Gen Agnar Al-Biruni</p>
     </footer>
   </div>
+  <script>
+  $(document).ready(function(){
+    $('.project-slider').slick({
+      autoplay: true,        // Enable automatic sliding
+      autoplaySpeed: 4000,   // Set the interval for sliding (4 seconds)
+      dots: false,           // Optionally hide dots
+      arrows: false,         // Optionally hide the navigation arrows
+      infinite: true,        // Enable infinite loop
+      speed: 600,            // Set speed of image transition
+      adaptiveHeight: true,   // Adjust slider height according to image size
+    });
+  });
+</script>
 </body>
 </html>
