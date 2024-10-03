@@ -1,22 +1,10 @@
-$(document).ready(function() {
-  // Initialize Slick Slider
+$(document).ready(function(){
   $('.autoplay').slick({
-    slidesToShow: 1,   // Show 1 slide at a time
-    slidesToScroll: 1, // Scroll 1 slide at a time
-    autoplay: true,    // Enable autoplay
-    autoplaySpeed: 4000, // Autoplay speed (4 seconds)
-    arrows: false,     // Enable arrows for manual navigation
-    dots: false,       // No dots for navigation
-    pauseOnHover: true, // Pause on hover
-    pauseOnFocus: true // Pause on focus
+    slidesToShow: 1,  // Menggunakan 1 slide per tampilan
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3000, // Slide setiap 3 detik
+    dots: true, // Menambahkan indikator dot
+    arrows: false // Menonaktifkan navigasi panah default
   });
-
-  // Synchronize custom navigation dots with slick slider
-  $('.autoplay').on('beforeChange', function(event, slick, currentSlide, nextSlide) {
-    $('.nav-dot').removeClass('active');  // Remove active class from all dots
-    $('.nav-dot').eq(nextSlide).addClass('active');  // Add active class to the corresponding dot
-  });
-
-  // Initialize first dot as active
-  $('.nav-dot').eq(0).addClass('active');
 });
