@@ -81,29 +81,29 @@ header h2 {
   width: 100%;
   height: 100%;
   overflow: hidden;
+  display: flex;
 }
 
 .project-slider img {
   position: absolute;
   top: 0;
-  left: 100%;
   width: 100%;
   height: auto;
-  transition: transform 1s ease-in-out;
+  transition: transform 1s ease-in-out; /* Transisi smooth untuk bergeser */
   opacity: 0;
 }
 
 .project-slider img.active {
-  transform: translateX(0); /* Gambar dalam posisi aktif */
-  opacity: 1;
+  transform: translateX(0); /* Gambar aktif berada di posisi tengah */
+  opacity: 1; /* Mengaktifkan gambar */
 }
 
 .project-slider img.prev {
-  transform: translateX(-100%); /* Gambar sebelumnya di luar layar kiri */
+  transform: translateX(-100%); /* Gambar sebelumnya berada di luar kiri */
 }
 
 .project-slider img.next {
-  transform: translateX(100%); /* Gambar berikutnya di luar layar kanan */
+  transform: translateX(100%); /* Gambar berikutnya berada di luar kanan */
 }
 
 /* Slider navigation dots */

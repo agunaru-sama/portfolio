@@ -15,20 +15,15 @@
           if (i === slideIndex) {
             img.classList.add('active'); // Gambar aktif
           } else if (i === (slideIndex - 1 + totalSlides) % totalSlides) {
-            img.classList.add('prev'); // Gambar sebelumnya
+            img.classList.add('prev'); // Gambar sebelumnya di luar layar kiri
           } else {
-            img.classList.add('next'); // Gambar berikutnya
+            img.classList.add('next'); // Gambar berikutnya di luar layar kanan
           }
         });
 
         dots.forEach((dot, i) => {
           dot.classList.toggle('active', i === slideIndex);
         });
-      }
-
-      function nextSlide() {
-        currentSlide = (currentSlide + 1) % totalSlides;
-        showSlide(currentSlide);
       }
 
       dots.forEach((dot, i) => {
@@ -38,8 +33,14 @@
         });
       });
 
-      showSlide(currentSlide); // Menampilkan gambar pertama
-      setInterval(nextSlide, 3000); // Ganti gambar setiap 3 detik
+      setTimeout(() => {
+        showSlide(currentSlide); // Menampilkan gambar pertama setelah 3 detik
+      }, 3000); // Delay sebelum gambar pertama muncul
+     
+      setInterval(() => {
+        currentSlide = (currentSlide + 1) % totalSlides;
+        showSlide(currentSlide);
+      }, 3000); // Ganti gambar setiap 3 detik
     });
   });
 </script>
