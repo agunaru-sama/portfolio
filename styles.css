@@ -88,6 +88,8 @@ header h2 {
   position: relative;
   width: 100%;
   height: 100%;
+  max-width: 100%; /* Agar tetap proporsional dengan layout */
+  max-height: 500px; /* Batas tinggi agar tetap tidak melebihi */
 }
 
 .project-slider img {
