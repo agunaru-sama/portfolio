@@ -4,9 +4,9 @@ $(document).ready(function() {
     slidesToShow: 1,   // Show 1 slide at a time
     slidesToScroll: 1, // Scroll 1 slide at a time
     autoplay: true,    // Enable autoplay
-    autoplaySpeed: 4000, // Autoplay speed (4 seconds)
-    arrows: true,     // No arrows for navigation
-    dots: true,       // No dots for navigation
+    autoplaySpeed: 2000, // Autoplay speed (2 seconds)
+    arrows: true,     // Enable arrows for manual navigation
+    dots: false,       // No dots for navigation
     pauseOnHover: true, // Pause on hover
     pauseOnFocus: true // Pause on focus
   });
