@@ -70,24 +70,31 @@
       margin-top: 50px;
     }
 
+    /* Update Project Card styling */
     .project-card {
       display: flex;
       align-items: center;
       margin-bottom: 20px;
-      padding: 20px;
       background-color: #1f2b36;
       border-radius: 10px;
-      gap: 20px;
+      overflow: hidden; /* Ensure image stays inside the card */
+      width: 100%; /* Make sure the card fills the container */
+      height: auto; /* Allow height to be dynamic */
+      max-height: 500px; /* Set a max height to avoid being too tall */
     }
 
+    /* Update the image styling for landscape and full width */
     .project-card img {
-      width: 64px;
-      height: 64px;
-      border-radius: 8px;
+      width: 100%; /* Full width image */
+      height: auto; /* Maintain aspect ratio */
+      aspect-ratio: 16 / 9; /* Ensure a 16:9 aspect ratio for the image */
+      object-fit: cover; /* Make sure image covers the area without distortion */
     }
 
     .project-card .project-info {
+      padding: 20px;
       flex: 1;
+      color: white;
     }
 
     .project-card .project-info p {
@@ -141,8 +148,8 @@
 
       .project-card img {
         margin-bottom: 10px;
-        width: 50px;
-        height: 50px;
+        width: 100%;
+        height: auto;
       }
 
       .project-card .project-info {
@@ -169,8 +176,8 @@
       }
 
       .project-card img {
-        width: 40px;
-        height: 40px;
+        width: 100%;
+        height: auto;
       }
 
       .contact-section a {
@@ -198,7 +205,7 @@
       <h2 class="text-2xl font-bold mt-5">Projects</h2>
 
       <div class="project-card">
-        <img src="https://cdn.usegalileo.ai/stability/06472128-d51a-4c77-b707-299a800faa61.png" alt="Indie Game Developer">
+        <img src="projectcard1.png" alt="Indie Game Developer">
         <div class="project-info">
           <p class="text-base font-medium">Indie Game Developer</p>
           <p class="text-sm text-[#92b3c9]">Design, develop, and test computer games for indie developers.</p>
@@ -207,7 +214,7 @@
       </div>
 
       <div class="project-card">
-        <img src="https://cdn.usegalileo.ai/stability/06472128-d51a-4c77-b707-299a800faa61.png" alt="2D/3D Designer">
+        <img src="projectcard2.png" alt="2D/3D Designer">
         <div class="project-info">
           <p class="text-base font-medium">2D/3D Designer</p>
           <p class="text-sm text-[#92b3c9]">Create 2D/3D designs using Blender, Autodesk Maya, Photoshop, Illustrator, CorelDRAW.</p>
@@ -216,7 +223,7 @@
       </div>
 
       <div class="project-card">
-        <img src="https://cdn.usegalileo.ai/stability/06472128-d51a-4c77-b707-299a800faa61.png" alt="Programming">
+        <img src="projectcard3.png" alt="Programming">
         <div class="project-info">
           <p class="text-base font-medium">Programming</p>
           <p class="text-sm text-[#92b3c9]">Develop websites, applications, and software solutions.</p>
@@ -228,9 +235,19 @@
     <!-- Contact Section -->
     <section class="contact-section">
       <h2 class="text-2xl font-bold mt-5">Contact Me</h2>
-      <a href="https://wa.me/+62 819-9994-4230 " class="w-9 h-9 flex items-center justify-center">WA</a>
-      <a href="mailto:gnar.animation@gmail.com" class="w-9 h-9 flex items-center justify-center">Email</a>
-      <a href="https://instagram.com/gen.albi" class="w-9 h-9 flex items-center justify-center">IG</a>
+
+      <!-- Updated Contact Icons with local images -->
+      <a href="https://wa.me/1234567890" class="w-9 h-9 flex items-center justify-center">
+        <img src="whatsapp.png" alt="WhatsApp" class="w-full h-full object-cover rounded-full">
+      </a>
+      
+      <a href="mailto:example@gmail.com" class="w-9 h-9 flex items-center justify-center">
+        <img src="gmail.png" alt="Gmail" class="w-full h-full object-cover rounded-full">
+      </a>
+
+      <a href="https://instagram.com/username" class="w-9 h-9 flex items-center justify-center">
+        <img src="instagram.png" alt="Instagram" class="w-full h-full object-cover rounded-full">
+      </a>
     </section>
 
     <!-- Footer -->
