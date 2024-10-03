@@ -16,7 +16,10 @@ function createSlider(sliderId, navId) {
         updateSlider();
     }
 
-    setInterval(nextImage, 3000); // Slide every 3 seconds
+    // Delay the start of the slider (3 seconds)
+    setTimeout(function() {
+        setInterval(nextImage, 3000); // Slide every 3 seconds after initial 3 seconds
+    }, 3000); // Initial delay of 3 seconds
 }
 
 // Call the createSlider function for each project
