@@ -73,8 +73,8 @@ header h2 {
 .project-card img {
   width: 100%;
   height: auto;
-  object-fit: cover;
-  max-height: 200px; /* Set max height */
+  object-fit: cover; /* Agar gambar tetap proporsional dan sesuai kontainer */
+  max-height: 300px; /* Menyesuaikan tinggi gambar agar tidak terlalu besar */
 }
 
 .project-card .project-info {

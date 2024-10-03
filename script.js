@@ -3,10 +3,10 @@ $(document).ready(function(){
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 2000,
+    autoplaySpeed: 4000,
     dots: true,
-    arrows: true,  // Menambahkan kontrol arah
-    fade: true,    // Menambahkan efek fade
+    arrows: false,
+    fade: true,
     infinite: true
   });
 });
