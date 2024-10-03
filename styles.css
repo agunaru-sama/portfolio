@@ -57,6 +57,7 @@ header h2 {
   margin-top: 50px;
 }
 
+/* Project Card Styling */
 .project-card {
   display: flex;
   align-items: center;
@@ -68,54 +69,54 @@ header h2 {
   max-height: 500px;
 }
 
-/* Slider Container */
+/* Project Card Image */
+.project-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Memastikan gambar memenuhi ruang, tanpa merusak rasio */
+}
+
+/* Project Info */
+.project-card .project-info {
+  padding: 20px;
+  flex: 1;
+  color: white;
+}
+
+/* Slider and Navigation */
 .project-slider {
   position: relative;
   width: 100%;
   height: 100%;
-  overflow: hidden;
-  display: flex;
-  flex-direction: row;
-  transition: transform 1s ease-in-out; /* Transisi smooth untuk bergeser */
 }
 
 .project-slider img {
   width: 100%;
   height: auto;
-  aspect-ratio: 16 / 9;
-  object-fit: cover;
-  flex: 0 0 100%; /* Pastikan tiap gambar mengambil 100% lebar slider */
+  display: block;
 }
 
-/* Slider navigation dots */
-.slider-dots {
+.project-nav {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
   justify-content: center;
-  margin-top: 10px;
 }
 
 .slider-dot {
   width: 10px;
   height: 10px;
   margin: 0 5px;
-  background-color: #92b3c9;
+  background-color: rgba(255, 255, 255, 0.5);
   border-radius: 50%;
   cursor: pointer;
+  transition: background-color 0.3s;
 }
 
 .slider-dot.active {
-  background-color: #233948;
-}
-
-/* Project Info */
-.project-info {
-  padding: 20px;
-  flex: 1;
-  color: white;
-}
-
-.project-info p {
-  margin: 5px 0;
+  background-color: white;
 }
 
 /* Contact Section */
@@ -129,21 +130,81 @@ header h2 {
   width: 50px;
   height: 50px;
   margin: 10px;
-  background-color: #233948;
   border-radius: 50%;
-  color: #92b3c9;
-  text-align: center;
-  line-height: 50px;
+  overflow: hidden;
 }
 
-.contact-section a:hover {
-  background-color: #92b3c9;
-  color: #233948;
+.contact-section img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Membuat gambar tetap penuh dan menjaga rasio */
 }
 
 /* Footer */
 footer {
   text-align: center;
   margin-top: 50px;
-  color: #92b3c9;
+  padding: 20px;
+  background-color: #1f2b36;
+  border-radius: 5px;
+}
+
+footer p {
+  color: white;
+  font-size: 14px;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  .hero-section h1 {
+    font-size: 2rem;
+  }
+
+  .hero-section p {
+    font-size: 0.9rem;
+  }
+
+  .project-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .project-card img {
+    margin-bottom: 10px;
+    width: 100%;
+    height: auto;
+  }
+
+  .project-card .project-info {
+    text-align: left;
+  }
+
+  .contact-section a {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-section h1 {
+    font-size: 1.5rem;
+  }
+
+  .hero-section p {
+    font-size: 0.8rem;
+  }
+
+  .project-card {
+    padding: 15px;
+  }
+
+  .project-card img {
+    width: 100%;
+    height: auto;
+  }
+
+  .contact-section a {
+    width: 35px;
+    height: 35px;
+  }
 }
