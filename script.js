@@ -1,10 +1,12 @@
 $(document).ready(function(){
-  $('.autoplay').slick({
-    slidesToShow: 1,  // Menggunakan 1 slide per tampilan
+  $('.project-slider').slick({
+    slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 3000, // Slide setiap 3 detik
-    dots: true, // Menambahkan indikator dot
-    arrows: false // Menonaktifkan navigasi panah default
+    autoplaySpeed: 2000,
+    dots: true,
+    arrows: true,  // Menambahkan kontrol arah
+    fade: true,    // Menambahkan efek fade
+    infinite: true
   });
 });
