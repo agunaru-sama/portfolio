@@ -10,6 +10,10 @@
   <link rel="icon" href="data:image/x-icon;base64,">
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 
+  <!-- Slick Slider CSS -->
+  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+
   <style>
     /* Global styles */
     body {
@@ -95,42 +99,6 @@
       color: white;
     }
 
-    /* Slider and Navigation */
-    .project-slider {
-      position: relative;
-      width: 100%;
-      height: 100%;
-    }
-
-    .project-slider img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-
-    .project-nav {
-      position: absolute;
-      bottom: 10px;
-      left: 50%;
-      transform: translateX(-50%);
-      display: flex;
-      justify-content: center;
-    }
-
-    .slider-dot {
-      width: 10px;
-      height: 10px;
-      margin: 0 5px;
-      background-color: rgba(255, 255, 255, 0.5);
-      border-radius: 50%;
-      cursor: pointer;
-      transition: background-color 0.3s;
-    }
-
-    .slider-dot.active {
-      background-color: white;
-    }
-
     /* Contact Section */
     .contact-section {
       margin-top: 50px;
@@ -161,59 +129,47 @@
       color: #92b3c9;
     }
 
-    /* Responsiveness */
-    @media (max-width: 768px) {
-      .hero-section h1 {
-        font-size: 2rem;
-      }
-
-      .hero-section p {
-        font-size: 0.9rem;
-      }
-
-      .project-card {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .project-card img {
-        margin-bottom: 10px;
-        width: 100%;
-        height: auto;
-      }
-
-      .project-card .project-info {
-        text-align: left;
-      }
-
-      .contact-section a {
-        width: 40px;
-        height: 40px;
-      }
+    /* Slick Slider */
+    .slider {
+      width: 100%;
+      margin: 0 auto;
+      background: #999;
     }
 
-    @media (max-width: 480px) {
-      .hero-section h1 {
-        font-size: 1.5rem;
-      }
+    .slider .slick-slide {
+      background: #f5f5f5;
+      border: solid 1px #dedede;
+      padding: 30px;
+      box-sizing: border-box;
+      border-radius: 10px;
+      margin: 10px;
+    }
 
-      .hero-section p {
-        font-size: 0.8rem;
-      }
+    /* Slick Slider Navigation */
+    .slick-prev, .slick-next {
+      font-size: 24px;
+      color: #333;
+      z-index: 1;
+    }
 
-      .project-card {
-        padding: 15px;
-      }
+    .slick-prev {
+      left: 10px;
+    }
 
-      .project-card img {
-        width: 100%;
-        height: auto;
-      }
+    .slick-next {
+      right: 10px;
+    }
 
-      .contact-section a {
-        width: 35px;
-        height: 35px;
-      }
+    .slider-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 150px;
+      font-size: 1.2rem;
+      color: #444;
+      background-color: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
   </style>
 </head>
@@ -236,17 +192,11 @@
 
       <!-- Indie Game Developer -->
       <div class="project-card">
-        <div class="project-slider" id="indieGameSlider">
+        <div class="project-slider autoplay">
           <img src="projectcard1-1.png" alt="Indie Game Developer">
           <img src="projectcard1-2.png" alt="Indie Game Developer">
           <img src="projectcard1-3.png" alt="Indie Game Developer">
           <img src="projectcard1-4.png" alt="Indie Game Developer">
-        </div>
-        <div class="project-nav" id="indieGameNav">
-          <div class="slider-dot"></div>
-          <div class="slider-dot"></div>
-          <div class="slider-dot"></div>
-          <div class="slider-dot"></div>
         </div>
         <div class="project-info">
           <p class="text-base font-medium">Indie Game Developer</p>
@@ -257,17 +207,11 @@
 
       <!-- 2D/3D Designer -->
       <div class="project-card">
-        <div class="project-slider" id="designSlider">
+        <div class="project-slider autoplay">
           <img src="projectcard2-1.png" alt="2D/3D Designer">
           <img src="projectcard2-2.png" alt="2D/3D Designer">
           <img src="projectcard2-3.png" alt="2D/3D Designer">
           <img src="projectcard2-4.png" alt="2D/3D Designer">
-        </div>
-        <div class="project-nav" id="designNav">
-          <div class="slider-dot"></div>
-          <div class="slider-dot"></div>
-          <div class="slider-dot"></div>
-          <div class="slider-dot"></div>
         </div>
         <div class="project-info">
           <p class="text-base font-medium">2D/3D Designer</p>
@@ -278,17 +222,11 @@
 
       <!-- Programming -->
       <div class="project-card">
-        <div class="project-slider" id="programmingSlider">
+        <div class="project-slider autoplay">
           <img src="projectcard3-1.png" alt="Programming">
           <img src="projectcard3-2.png" alt="Programming">
           <img src="projectcard3-3.png" alt="Programming">
           <img src="projectcard3-4.png" alt="Programming">
-        </div>
-        <div class="project-nav" id="programmingNav">
-          <div class="slider-dot"></div>
-          <div class="slider-dot"></div>
-          <div class="slider-dot"></div>
-          <div class="slider-dot"></div>
         </div>
         <div class="project-info">
           <p class="text-base font-medium">Programming</p>
@@ -302,62 +240,32 @@
     <section class="contact-section">
       <h2 class="text-2xl font-bold mt-5">Contact Me</h2>
 
-      <!-- Updated Contact Icons with local images -->
       <a href="https://wa.me/+62 819-9994-4230" class="w-9 h-9 flex items-center justify-center">
         <img src="whatsapp.png" alt="WhatsApp" class="w-full h-full object-cover rounded-full">
+      </a>
+      
+      <a href="https://instagram.com/gen.albi" class="w-9 h-9 flex items-center justify-center">
+        <img src="instagram.png" alt="Instagram" class="w-full h-full object-cover rounded-full">
       </a>
       
       <a href="mailto:gnar.animation@gmail.com" class="w-9 h-9 flex items-center justify-center">
         <img src="gmail.png" alt="Gmail" class="w-full h-full object-cover rounded-full">
       </a>
-
-      <a href="https://instagram.com/gen.albi" class="w-9 h-9 flex items-center justify-center">
-        <img src="instagram.png" alt="Instagram" class="w-full h-full object-cover rounded-full">
-      </a>
     </section>
+  </div
+  
+  
+  
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 Gen Agnar Al-Biruni. All rights reserved.</p>
+  </footer>
 
-    <!-- Footer -->
-    <footer>
-      <p>© 2023 Gen Agnar Al-Biruni</p>
-    </footer>
-  </div>
+  <!-- Slick Slider JavaScript -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
-  <!-- Scripts for project slider -->
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      const sliders = document.querySelectorAll('.project-slider');
-      const dots = document.querySelectorAll('.slider-dot');
-
-      sliders.forEach((slider, index) => {
-        let currentSlide = 0;
-        const images = slider.querySelectorAll('img');
-        const totalSlides = images.length;
-
-        function showSlide(slideIndex) {
-          images.forEach((img, i) => {
-            img.style.display = (i === slideIndex) ? 'block' : 'none';
-          });
-          dots.forEach((dot, i) => {
-            dot.classList.toggle('active', i === slideIndex);
-          });
-        }
-
-        function nextSlide() {
-          currentSlide = (currentSlide + 1) % totalSlides;
-          showSlide(currentSlide);
-        }
-
-        dots.forEach((dot, i) => {
-          dot.addEventListener('click', () => {
-            currentSlide = i;
-            showSlide(currentSlide);
-          });
-        });
-
-        showSlide(currentSlide);
-        setInterval(nextSlide, 3000); // Change slide every 3 seconds
-      });
-    });
-  </script>
+  <!-- Custom Script -->
+  <script src="script.js"></script>
 </body>
 </html>

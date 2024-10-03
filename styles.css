@@ -1,139 +1,28 @@
-/* Project Section */
-.project-section {
-  margin-top: 50px;
-}
+/* Additional styling for the contact section, buttons, and footer */
 
-/* Project Card Styling */
-.project-card {
-  display: flex;
-  align-items: center;
-  margin-bottom: 20px;
-  background-color: #1f2b36;
-  border-radius: 10px;
-  overflow: hidden;
-  width: 100%;
-  max-height: 500px;
-}
-
-/* Project Card Image */
-.project-card img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* Memastikan gambar memenuhi ruang, tanpa merusak rasio */
-}
-
-/* Project Info */
-.project-card .project-info {
-  padding: 20px;
-  flex: 1;
-  color: white;
-}
-
-/* Slider and Navigation */
-.project-slider {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  max-width: 100%; /* Agar tetap proporsional dengan layout */
-  max-height: 500px; /* Batas tinggi agar tetap tidak melebihi */
-}
-
-.project-slider img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* Garis dan Navigasi dengan 4 titik */
-.project-nav {
-  position: relative;
-  width: 100%;
-  height: 10px;
-  background-color: #444;
-  border-radius: 5px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
-.slider-progress {
-  position: absolute;
-  width: 25%; /* Setiap titik diberi 25% */
-  height: 100%;
-  background-color: #ffffff;
-  transition: width 0.3s ease; /* Smooth transition saat pergeseran */
-}
-
-.slider-dot {
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  background-color: #fff;
+.contact-section a {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  margin: 10px;
+  background-color: #233948;
   border-radius: 50%;
-  top: 50%;
-  transform: translateY(-50%);
+  color: #92b3c9;
+  text-align: center;
+  line-height: 50px;
 }
 
-.slider-dot:nth-child(1) {
-  left: 0;
+.contact-section a:hover {
+  background-color: #92b3c9;
+  color: #233948;
 }
 
-.slider-dot:nth-child(2) {
-  left: 25%;
+footer {
+  text-align: center;
+  margin-top: 50px;
+  color: #92b3c9;
 }
 
-.slider-dot:nth-child(3) {
-  left: 50%;
-}
-
-.slider-dot:nth-child(4) {
-  left: 75%;
-}
-
-.slider-dot.active {
-  background-color: #ff4d4d; /* Warna saat aktif */
-}
-
-/* Responsiveness */
-@media (max-width: 768px) {
-  .hero-section h1 {
-    font-size: 2rem;
-  }
-
-  .hero-section p {
-    font-size: 0.9rem;
-  }
-
-  .project-card {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .project-card img {
-    margin-bottom: 10px;
-    width: 100%;
-    height: auto;
-  }
-
-  .project-card .project-info {
-    text-align: left;
-  }
-}
-
-@media (max-width: 480px) {
-  .hero-section h1 {
-    font-size: 1.5rem;
-  }
-
-  .hero-section p {
-    font-size: 0.8rem;
-  }
-
-  .project-card {
-    padding: 15px;
-  }
-
-  .project-card img {
-    width: 100%;
-    height: auto;
-  }
+footer p {
+  font-size: 0.875rem;
 }

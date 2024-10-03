@@ -1,46 +1,32 @@
-document.addEventListener("DOMContentLoaded", function() {
-  const sliders = document.querySelectorAll('.project-slider');
-  const progressBars = document.querySelectorAll('.slider-progress');
-  const dots = document.querySelectorAll('.slider-dot');
+$(document).ready(function(){
+  // Slick Slider Configuration for autoplay with multiple slides shown
+  $('.autoplay').slick({
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    prevArrow: '<button type="button" class="slick-prev">‹</button>',
+    nextArrow: '<button type="button" class="slick-next">›</button>',
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      },
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1
+        }
+      }
+    ]
+  });
 
-  sliders.forEach((slider, index) => {
-    let currentSlide = 0;
-    const images = slider.querySelectorAll('img');
-    const totalSlides = images.length;
-
-    // Fungsi untuk menampilkan slide
-    function showSlide(slideIndex) {
-      images.forEach((img, i) => {
-        img.style.display = (i === slideIndex) ? 'block' : 'none';
-      });
-
-      // Update status dot
-      dots.forEach((dot, i) => {
-        dot.classList.toggle('active', i === slideIndex);
-      });
-
-      // Update progress bar (animasi garis bergerak)
-      progressBars[index].style.width = ((slideIndex + 1) / totalSlides) * 100 + '%';
-    }
-
-    // Fungsi untuk beralih ke slide berikutnya
-    function nextSlide() {
-      currentSlide = (currentSlide + 1) % totalSlides;
-      showSlide(currentSlide);
-    }
-
-    // Event listener untuk klik pada dot
-    dots.forEach((dot, i) => {
-      dot.addEventListener('click', () => {
-        currentSlide = i;
-        showSlide(currentSlide);
-      });
-    });
-
-    // Memulai dengan menampilkan slide pertama
-    showSlide(currentSlide);
-
-    // Set interval untuk slide otomatis setiap 3 detik
-    setInterval(nextSlide, 3000);
+  // Example of toggling navigation (if needed)
+  $(".btn-toggle").click(function() {
+    $("header h2").toggleClass("hidden");
   });
 });
