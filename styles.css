@@ -25,13 +25,6 @@ header h2 {
   font-weight: bold;
 }
 
-.btn-toggle {
-  background: none;
-  border: none;
-  color: white;
-  cursor: pointer;
-}
-
 /* Hero Section */
 .hero-section {
   background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4)), url('gambarmuka.png');
